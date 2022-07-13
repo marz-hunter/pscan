@@ -17,12 +17,6 @@ import (
 )
 
 func init() {
-	fmt.Println(color.YellowString("=================================================="))
-	fmt.Println(color.CyanString("       ▛▀▖▜    ▐  ▗             "))
-	fmt.Println(color.CyanString("       ▙▄▘▐ ▌ ▌▜▀ ▄ ▞▀▖▛▀▖      "))
-	fmt.Println(color.CyanString("       ▌  ▐ ▌ ▌▐ ▖▐ ▌ ▌▌ ▌      "))
-	fmt.Println(color.CyanString("▀▀▀▀▀▀ ▘   ▘▝▀▘ ▀ ▀▘▝▀ ▘ ▘▀▀▀▀▀▀") + "v0.1 By @divadbate")
-
 	fmt.Println(color.BlueString("Scans URLs for Prototype Pollution via query parameter."))
 	fmt.Println(color.YellowString("=================================================="))
 	fmt.Println(color.CyanString("Credits:"))
