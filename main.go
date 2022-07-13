@@ -17,18 +17,18 @@ import (
 )
 
 func init() {
-	os.Stderr.WriteString(color.YellowString("=================================================="))
-	os.Stderr.WriteString(color.CyanString("       ▛▀▖▜    ▐  ▗             "))
-	os.Stderr.WriteString(color.CyanString("       ▙▄▘▐ ▌ ▌▜▀ ▄ ▞▀▖▛▀▖      "))
-	os.Stderr.WriteString(color.CyanString("       ▌  ▐ ▌ ▌▐ ▖▐ ▌ ▌▌ ▌      "))
-	os.Stderr.WriteString(color.CyanString("▀▀▀▀▀▀ ▘   ▘▝▀▘ ▀ ▀▘▝▀ ▘ ▘▀▀▀▀▀▀") + "v0.1 By @divadbate")
+	fmt.Println(color.YellowString("=================================================="))
+	fmt.Println(color.CyanString("       ▛▀▖▜    ▐  ▗             "))
+	fmt.Println(color.CyanString("       ▙▄▘▐ ▌ ▌▜▀ ▄ ▞▀▖▛▀▖      "))
+	fmt.Println(color.CyanString("       ▌  ▐ ▌ ▌▐ ▖▐ ▌ ▌▌ ▌      "))
+	fmt.Println(color.CyanString("▀▀▀▀▀▀ ▘   ▘▝▀▘ ▀ ▀▘▝▀ ▘ ▘▀▀▀▀▀▀") + "v0.1 By @divadbate")
 
-	os.Stderr.WriteString(color.BlueString("Scans URLs for Prototype Pollution via query parameter."))
-	os.Stderr.WriteString(color.YellowString("=================================================="))
-	os.Stderr.WriteString(color.CyanString("Credits:"))
-	os.Stderr.WriteString("-@tomnomnom for inspiring me with Page-fetch")
-	os.Stderr.WriteString("-Blackfan (github.com/BlackFan/client-side-prototype-pollution)")
-	os.Stderr.WriteString(color.YellowString("==================================================\n"))
+	fmt.Println(color.BlueString("Scans URLs for Prototype Pollution via query parameter."))
+	fmt.Println(color.YellowString("=================================================="))
+	fmt.Println(color.CyanString("Credits:"))
+	fmt.Println("-@tomnomnom for inspiring me with Page-fetch")
+	fmt.Println("-Blackfan (github.com/BlackFan/client-side-prototype-pollution)")
+	fmt.Println(color.YellowString("==================================================\n"))
 
 }
 
@@ -89,7 +89,7 @@ func main() {
 					chromedp.Navigate(requestURL+hasQuery(requestURL)+URLpayload),
 					chromedp.Evaluate("window.zzzc", &res),
 				)
-				//os.Stderr.WriteString(requestURL + hasQuery(requestURL) + URLpayload)
+				//fmt.Println(requestURL + hasQuery(requestURL) + URLpayload)
 
 				if res != "" || err.Error() == "json: cannot unmarshal array into Go value of type string" { //fix this hack
 					log.Printf("%s: %v", color.GreenString("[+]")+requestURL, color.GreenString("Vulnerable!"))
@@ -98,7 +98,7 @@ func main() {
 				}
 
 				if err != nil && err.Error() != "json: cannot unmarshal array into Go value of type string" { //fix this hack
-					os.Stderr.WriteString(color.RedString("[-]"), requestURL, color.RedString(err.Error()))
+					fmt.Println(color.RedString("[-]"), requestURL, color.RedString(err.Error()))
 				}
 
 				cancel()
