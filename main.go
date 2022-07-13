@@ -86,7 +86,7 @@ func main() {
 				//fmt.Println(requestURL + hasQuery(requestURL) + URLpayload)
 
 				if res != "" || err.Error() == "json: cannot unmarshal array into Go value of type string" { //fix this hack
-					log.Printf("%s: %v", color.GreenString("[-]")+requestURL, color.GreenString("Vulnerable!"))
+					fmt.Println(color.GreenString("[-]")+requestURL, color.GreenString("Vulnerable!"))
 					datawriter.WriteString(requestURL + "\n")
 					datawriter.Flush()
 				}
