@@ -67,7 +67,7 @@ func main() {
 	// existing browser instead of making a new browser each time.
 	// see: https://godoc.org/github.com/chromedp/chromedp#NewContext
 	if err := chromedp.Run(pctx); err != nil {
-		os.Stderr.WriteString(os.Stderr, "error starting browser: %s\n", err)
+		fmt.Fprintf(os.Stderr, "error starting browser: %s\n", err)
 		return
 	}
 
